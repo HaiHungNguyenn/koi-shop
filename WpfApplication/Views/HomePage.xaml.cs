@@ -10,23 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfApplication.Views
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Interaction logic for HomePage.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class HomePage : Page
     {
-        public Login()
+        public HomePage()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow mainWindow = (MainWindow) Application.Current.MainWindow;
+            mainWindow.MainFrame.Navigate(new LoginPage());
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BusinessObjects;
 using BusinessObjects.Dto;
+using BusinessObjects.Request.Auth;
 using Repositories;
 using Repositories.Interfaces;
 using Services.Constant;
@@ -14,41 +15,60 @@ public class AuthService : IAuthService
     private readonly IUserRepository _userRepository = new UserRepository();
     private readonly IRoleRepository _roleRepository = new RoleRepository();
 
-    public bool Login(string username, string password)
+    public ServiceActionResult Login(string username, string password)
     {
-        var user = _userRepository.Find(x => x.UserName.Equals(username)) ?? throw new Exception("Not Found User");
+        var user = _userRepository.Find(x => x.UserName.Equals(username));
+        if(user is null)
+            return new ServiceActionResult()
+            {
+                IsSuccess = false,
+                Message = "Not Found UserName"
+            };
         if (!HashedPasswordHelper.VerifyPassword(password, user.HashedPassword))
-            throw new Exception("Invalid Password");
+            return new ServiceActionResult() {
+                IsSuccess = false,
+                Message = "Invalid Password"
+            };
         UserSession.CurrenUser.SetUser(user.Id,user.UserName, user.Role.Name);
-        return true;
+        return new ServiceActionResult();
     }
 
-    public bool Logout()
+    public ServiceActionResult Logout()
     {
         UserSession.CurrenUser.ClearSession();
-        return true;
+        return new ServiceActionResult();
     }
 
-    public bool Register(string username, string password, string role)
+    public ServiceActionResult Register(RegisterRequest request)
     {
-        var existingUser = _userRepository.Find(x => x.UserName == username);
+        var existingUser = _userRepository.Find(x => x.UserName == request.UserName);
         if (existingUser is not null)
-            throw new Exception("User name already exist.");
-        var existRole = EnsureRoleExist(role);
+            return new ServiceActionResult() { 
+                IsSuccess = false,
+                Message = "Username is already exist."
+            };
+        var existRole = EnsureRoleExist(request.Role);
+        if (existRole is null)
+            return new ServiceActionResult()
+            {
+                IsSuccess = false,
+                Message = $"{request.Role} does not exist."
+            };
         var newUser = new User()
         {
-            UserName = username,
-            HashedPassword = HashedPasswordHelper.HashPassword(password),
+            UserName = request.UserName,
+            HashedPassword = HashedPasswordHelper.HashPassword(request.Password),
+            Email = request.Email,
             Role = existRole
         };
         _userRepository.Add(newUser);
-        return true;
+        return new ServiceActionResult();
     }
 
-    private Role EnsureRoleExist(string role)
+    private Role? EnsureRoleExist(string role)
     {
         if (!IsValidRole(role))
-            throw new Exception($"Not found Role {role}.");
+            return null;
         var existRole = _roleRepository.Find(x => x.Name == role);
         if (existRole is not null)
             return existRole;
