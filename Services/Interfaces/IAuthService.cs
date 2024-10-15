@@ -1,8 +1,10 @@
 ﻿namespace Services.Interfaces;
+using BusinessObjects.Dto;
+using BusinessObjects.Request.Auth;
 
 public interface IAuthService
 {
-    bool Login(string username, string password);
-    bool Logout();
-    bool Register(string username, string password, string role);
+    ServiceActionResult Login(string username, string password);
+    ServiceActionResult Logout();
+    ServiceActionResult Register(RegisterRequest request);
 }

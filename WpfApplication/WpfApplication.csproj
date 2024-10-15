@@ -8,4 +8,21 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Views\logo.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resource\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessObjects\BusinessObjects.csproj" />
+    <ProjectReference Include="..\Services\Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\logo.jpg" />
+  </ItemGroup>
+
 </Project>
