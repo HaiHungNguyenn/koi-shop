@@ -1,6 +1,7 @@
 ﻿using BusinessObjects;
 using BusinessObjects.Dto;
 using BusinessObjects.Request.Auth;
+using Microsoft.EntityFrameworkCore;
 using Repositories;
 using Repositories.Interfaces;
 using Services.Constant;
@@ -17,17 +18,17 @@ public class AuthService : IAuthService
 
     public ServiceActionResult Login(string username, string password)
     {
-        var user = _userRepository.Find(x => x.UserName.Equals(username));
+        var user = _userRepository.GetAll().Include(x => x.Role).FirstOrDefault(x => x.UserName == username);
         if(user is null)
             return new ServiceActionResult()
             {
                 IsSuccess = false,
-                Message = "Not Found UserName"
+                Message = "Invalid username or password"
             };
         if (!HashedPasswordHelper.VerifyPassword(password, user.HashedPassword))
             return new ServiceActionResult() {
                 IsSuccess = false,
-                Message = "Invalid Password"
+                Message = "Invalid username or password"
             };
         UserSession.CurrenUser.SetUser(user.Id,user.UserName, user.Role.Name);
         return new ServiceActionResult();
@@ -59,7 +60,7 @@ public class AuthService : IAuthService
             UserName = request.UserName,
             HashedPassword = HashedPasswordHelper.HashPassword(request.Password),
             Email = request.Email,
-            Role = existRole
+            RoleId = existRole.Id
         };
         _userRepository.Add(newUser);
         return new ServiceActionResult();
