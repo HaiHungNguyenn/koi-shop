@@ -1,0 +1,45 @@
+﻿<Page x:Class="WpfApplication.Views.ShopManagerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApplication.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="605" d:DesignWidth="1143"
+      Title="Shop Manager Panel">
+    <Grid Background="#FFF7F7">
+        <DockPanel LastChildFill="True">
+
+            <!-- Top Bar with Logout Button -->
+            <DockPanel DockPanel.Dock="Top" Background="#EFEFEF" Height="50">
+                <DockPanel />
+                <Label x:Name="WelcomeLable"  Width="834" FontSize="20" FontWeight="Bold" FontStyle="Italic" Foreground="#FFEF4747" Margin="20,0,0,0"/>
+                <Button Content="Logout"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Margin="0,0,10,0"
+                            Width="80" Height="30"
+                            Background="#FF5E5E"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            Cursor="Hand"
+                            Click="LogoutButton_Click"/>
+            </DockPanel>
+
+            <!-- Sidebar as TabControl -->
+            <TabControl TabStripPlacement="Left" DockPanel.Dock="Left" Background="#F0F0F0" BorderThickness="0" SelectionChanged="TabControl_SelectionChanged">
+                <TabItem Header="Accounts" Height="60" Padding="20,10" Tag="AccountsPage" />
+                <TabItem Header="Koi Fish" Height="60" Padding="20,10" Tag="FishPage" />
+                <TabItem Header="Koi Category" Height="60" Padding="20,10" Tag="KoiCategoryPage" />
+                <TabItem Header="Koi Fish Package" Height="60" Padding="20,10" Tag="FishPackagePage" />
+                <TabItem Header="User Profile" Height="60" Padding="20,10" Tag="UserProfilePage" />
+                <TabItem Header="Order" Height="60" Padding="20,10" Tag="OrderPage" />
+                <TabItem Header="Promotion" Height="60" Padding="20,10" Tag="PromotionPage" />
+            </TabControl>
+
+            <!-- Main Content Area -->
+            <Frame x:Name="MainContentFrame" Background="White" />
+
+        </DockPanel>
+    </Grid>
+</Page>

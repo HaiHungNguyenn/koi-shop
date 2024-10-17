@@ -5,14 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApplication.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="605" d:DesignWidth="1143"
       Title="HomePage">
 
     <Grid Background="White">
         <Image  HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="250" Source="/Views/logo.jpg" Stretch="Fill"/>
-        <Label Content="Koi Shop" HorizontalAlignment="Center" Height="76" Margin="0,75,0,0" VerticalAlignment="Top" Width="236" FontSize="48" FontFamily="Cascadia Mono"/>
-        <Button Content="Login" HorizontalAlignment="Left" Height="66" Margin="134,250,0,0" VerticalAlignment="Top" Width="211"  FontSize="24" Background="#FFDDDDDD" Click="Button_Click"/>
-        <Button Content="HomePage" HorizontalAlignment="Left" Height="66" Margin="469,250,0,0" VerticalAlignment="Top" Width="211" FontSize="24"/>
+        <Label Content="Koi Shop" HorizontalAlignment="Center" Height="76" Margin="0,125,0,0" VerticalAlignment="Top" Width="236" FontSize="48" FontFamily="Cascadia Mono"/>
+        <Button Content="Login" HorizontalAlignment="Left" Height="66" Margin="309,302,0,0" VerticalAlignment="Top" Width="211"  FontSize="24" Background="#FFDDDDDD" Click="Button_Click"/>
+        <Button Content="HomePage" HorizontalAlignment="Left" Height="66" Margin="644,302,0,0" VerticalAlignment="Top" Width="211" FontSize="24"/>
 
     </Grid>
 </Page>

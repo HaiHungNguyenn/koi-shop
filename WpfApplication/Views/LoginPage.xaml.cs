@@ -1,4 +1,6 @@
-﻿using Services;
+﻿using BusinessObjects.Dto;
+using Services;
+using Services.Constant;
 using Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -45,7 +47,13 @@ namespace WpfApplication.Views
                     LoginMessage.Content = loginResponse.Message;
                     LoginMessage.Foreground = Brushes.Red;
                 }
-                    
+                Thread.Sleep(1000);
+                var currentUser = UserSession.CurrenUser;
+                if (currentUser is not null && currentUser.Role == UserRole.ShopManager)
+                {
+                    MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+                    mainWindow.MainFrame.Navigate(new ShopManagerPage());
+                }
             }
             catch (Exception ex)
             {

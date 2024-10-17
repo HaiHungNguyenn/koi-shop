@@ -5,22 +5,22 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApplication.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="605" d:DesignWidth="1143"
       Title="RegisterPage">
 
     <Grid Background="White" Margin="0,0,-110,-127">
         <Image  HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="250" Source="/Views/logo.jpg" Stretch="Fill"/>
-        <Label Content="Koi Shop Registation" HorizontalAlignment="Left" Height="76" Margin="283,100,0,0" VerticalAlignment="Top" Width="583" FontSize="48" FontFamily="Cascadia Mono"/>
-        <Label Content="UserName" HorizontalAlignment="Left" Height="46" Margin="114,224,0,0" VerticalAlignment="Top" Width="201" FontSize="24" />
-        <Label Content="Email" HorizontalAlignment="Left" Height="46" Margin="114,288,0,0" VerticalAlignment="Top" Width="201" FontSize="24" />
-        <Label Content="Password" HorizontalAlignment="Left" Height="46" Margin="114,353,0,0" VerticalAlignment="Top" Width="201" FontSize="24" />
-        <Label Content="Confirm Password" HorizontalAlignment="Left" Height="46" Margin="114,411,0,0" VerticalAlignment="Top" Width="201" FontSize="24" />
-        <TextBox x:Name="UserNameTextBox" HorizontalAlignment="Left" Height="46" Margin="396,224,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="357" FontSize="20"/>
-        <TextBox x:Name="EmailTextBox" HorizontalAlignment="Left" Height="46" Margin="396,288,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="357" FontSize="20" TextChanged="EmailTextBox_TextChanged"/>
-        <PasswordBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Height="46" Margin="396,353,0,0" VerticalAlignment="Top" Width="357"/>
-        <PasswordBox x:Name="ConfirmPasswordTextBox" HorizontalAlignment="Left" Height="46" Margin="396,411,0,0" VerticalAlignment="Top" Width="357" PasswordChanged="ConfirmPasswordTextBox_PasswordChanged"/>
-        <Button x:Name="RegisterButton" Content="Register" HorizontalAlignment="Left" Height="48" Margin="601,486,0,0" VerticalAlignment="Top" Width="152" Click="RegisterButton_Click"/>
-        <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Height="48" Margin="396,486,0,0" VerticalAlignment="Top" Width="153" Click="CancelButton_Click"/>
-        <Label x:Name="RegisterMessage"  HorizontalAlignment="Left" Height="43" Margin="396,176,0,0" VerticalAlignment="Top" Width="357" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Koi Shop Registation" HorizontalAlignment="Left" Height="76" Margin="367,125,0,0" VerticalAlignment="Top" Width="583" FontSize="48" FontFamily="Cascadia Mono"/>
+        <Label Content="UserName" HorizontalAlignment="Left" Height="46" Margin="129,298,0,0" VerticalAlignment="Top" Width="311" FontSize="24" />
+        <Label Content="Email" HorizontalAlignment="Left" Height="46" Margin="129,362,0,0" VerticalAlignment="Top" Width="311" FontSize="24" />
+        <Label Content="Password" HorizontalAlignment="Left" Height="46" Margin="129,426,0,0" VerticalAlignment="Top" Width="311" FontSize="24" />
+        <Label Content="Confirm Password" HorizontalAlignment="Left" Height="46" Margin="129,484,0,0" VerticalAlignment="Top" Width="311" FontSize="24" />
+        <TextBox x:Name="UserNameTextBox" HorizontalAlignment="Left" Height="46" Margin="565,298,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="551" FontSize="20"/>
+        <TextBox x:Name="EmailTextBox" HorizontalAlignment="Left" Height="46" Margin="565,362,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="551" FontSize="20" TextChanged="EmailTextBox_TextChanged"/>
+        <PasswordBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Height="46" Margin="565,426,0,0" VerticalAlignment="Top" Width="551"/>
+        <PasswordBox x:Name="ConfirmPasswordTextBox" HorizontalAlignment="Left" Height="46" Margin="565,484,0,0" VerticalAlignment="Top" Width="551" PasswordChanged="ConfirmPasswordTextBox_PasswordChanged"/>
+        <Button x:Name="RegisterButton" Content="Register" HorizontalAlignment="Left" Height="48" Margin="882,560,0,0" VerticalAlignment="Top" Width="234" Click="RegisterButton_Click"/>
+        <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Height="48" Margin="565,560,0,0" VerticalAlignment="Top" Width="236" Click="CancelButton_Click"/>
+        <Label x:Name="RegisterMessage"  HorizontalAlignment="Left" Height="30" Margin="565,254,0,0" VerticalAlignment="Top" Width="551" FontSize="20" FontWeight="Bold"/>
     </Grid>
 </Page>
