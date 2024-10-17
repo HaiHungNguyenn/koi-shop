@@ -43,7 +43,7 @@ namespace WpfApplication.Views
                 }
                 else if (loginResponse.IsSuccess == false) {
                     LoginMessage.Content = loginResponse.Message;
-                    LoginMessage.Foreground = Brushes.Green;
+                    LoginMessage.Foreground = Brushes.Red;
                 }
                     
             }
