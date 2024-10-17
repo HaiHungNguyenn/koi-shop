@@ -1,5 +1,6 @@
 ﻿using BusinessObjects;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace DataAccessLayer;
 
@@ -34,8 +35,13 @@ public class KoiShopContext : DbContext
     {
         if (optionsBuilder.IsConfigured)
             return;
-        optionsBuilder.UseSqlServer("Server=LAPTOP-55QLG1BQ\\MSSQLSERVER01;Database=KoiShop;uid=sa;pwd=1234;TrustServerCertificate=True;");
+        optionsBuilder.UseSqlServer(GetConnectionString());
         base.OnConfiguring(optionsBuilder);
+    }
+
+    private string GetConnectionString() { 
+        IConfiguration conf = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build();
+        return conf.GetConnectionString("DefaultConnection");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
