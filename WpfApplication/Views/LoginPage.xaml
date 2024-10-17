@@ -5,19 +5,20 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApplication.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="605" d:DesignWidth="1143"
+
       Title="LoginPage">
 
     <Grid Background="White" Margin="0,0,-43,-51">
         <Image  HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="250" Source="/Views/logo.jpg" Stretch="Fill"/>
         <Label Content="Koi Shop Login" HorizontalAlignment="Left" Height="76" Margin="250,100,0,0" VerticalAlignment="Top" Width="422" FontSize="48" FontFamily="Cascadia Mono"/>
-        <Label Content="User Name" HorizontalAlignment="Left" Margin="99,255,0,0" VerticalAlignment="Top" Height="40" Width="132" FontSize="24"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="99,316,0,0" VerticalAlignment="Top" Height="40" Width="132" FontSize="24"/>
+        <Label Content="User Name" HorizontalAlignment="Left" Margin="260,281,0,0" VerticalAlignment="Top" Height="40" Width="160" FontSize="24"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="260,342,0,0" VerticalAlignment="Top" Height="40" Width="160" FontSize="24"/>
         <TextBlock HorizontalAlignment="Left" Margin="-244,162,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBox x:Name="userNameTextBox" HorizontalAlignment="Left" Height="42" Margin="299,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384" FontSize="24"/>
-        <PasswordBox x:Name="passwordTextBox" HorizontalAlignment="Left" Height="42" Margin="299,316,0,0" VerticalAlignment="Top" Width="384" FontSize="24"/>
-        <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" Height="57" Margin="531,382,0,0" VerticalAlignment="Top" Width="152" FontSize="24" Foreground="White" Background="#FFEA8F8F" FontWeight="Bold" Click="LoginButton_Click"/>
-        <Label x:Name="LoginMessage" HorizontalAlignment="Left" Height="46" Margin="299,181,0,0" VerticalAlignment="Top" Width="400" FontSize="18"/>
-        <Button x:Name="RegisterButton" Content="Register" HorizontalAlignment="Left" Height="57" Margin="309,382,0,0" VerticalAlignment="Top" Width="152" FontSize="24" Foreground="White" Background="#FFABEA8F" FontWeight="Bold" Click="RegisterButton_Click"/>
+        <TextBox x:Name="userNameTextBox" HorizontalAlignment="Left" Height="42" Margin="502,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="466" FontSize="24"/>
+        <PasswordBox x:Name="passwordTextBox" HorizontalAlignment="Left" Height="42" Margin="502,342,0,0" VerticalAlignment="Top" Width="466" FontSize="24"/>
+        <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" Height="57" Margin="789,416,0,0" VerticalAlignment="Top" Width="185" FontSize="24" Foreground="White" Background="#FFEA8F8F" FontWeight="Bold" Click="LoginButton_Click"/>
+        <Label x:Name="LoginMessage" HorizontalAlignment="Left" Height="46" Margin="568,217,0,0" VerticalAlignment="Top" Width="400" FontSize="18"/>
+        <Button x:Name="RegisterButton" Content="Register" HorizontalAlignment="Left" Height="57" Margin="520,416,0,0" VerticalAlignment="Top" Width="185" FontSize="24" Foreground="White" Background="#FFABEA8F" FontWeight="Bold" Click="RegisterButton_Click"/>
     </Grid>
 </Page>
