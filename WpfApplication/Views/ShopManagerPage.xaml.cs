@@ -56,7 +56,7 @@ namespace WpfApplication.Views
                         break;
                     case "OrderPage":
                         break;
-                    case "KoiCategoryPage";
+                    case "KoiCategoryPage":
                         break;
                 }
             }
