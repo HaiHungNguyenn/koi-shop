@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfApplication.Views.CreateUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication.Views"
+        mc:Ignorable="d"
+        Title="CreateUserWindow" Height="450" Width="800">
+    <Grid Background="#FFE4E4E4">
+        <Label Content="Create User Form" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Foreground="#FFF54848"/>
+        <Label x:Name="CreateMessage" Content="" HorizontalAlignment="Left" Margin="477,365,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Foreground="#FFF54848"/>
+        <Label HorizontalAlignment="Left" Content="UserName" Height="36" Margin="114,107,0,0" VerticalAlignment="Top" Width="123" Background="White" />
+        <Label HorizontalAlignment="Left" Content="FullName" Height="36" Margin="114,150,0,0" VerticalAlignment="Top" Width="123" Background="White" />
+        <Label HorizontalAlignment="Left" Content="Email" Height="36" Margin="114,193,0,0" VerticalAlignment="Top" Width="123" Background="White" />
+        <Label HorizontalAlignment="Left" Content="Phone Number" Height="36" Margin="114,236,0,0" VerticalAlignment="Top" Width="123" Background="White" />
+        <Label HorizontalAlignment="Left" Content="Address" Height="36" Margin="114,278,0,0" VerticalAlignment="Top" Width="123" Background="White" />
+        <Label HorizontalAlignment="Left" Content="Password" Height="36" Margin="114,321,0,0" VerticalAlignment="Top" Width="123" Background="White" />
+
+        <TextBox x:Name="UserNameTextBox" HorizontalAlignment="Left" Height="36" Margin="297,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" TextChanged="OnTextChanged"/>
+        <TextBox x:Name="FullNameTextBox" HorizontalAlignment="Left" Height="36" Margin="297,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320"/>
+        <TextBox x:Name="EmailTextBox" HorizontalAlignment="Left" Height="36" Margin="297,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" TextChanged="OnTextChanged"/>
+        <TextBox x:Name="PhoneNumberTextBox" HorizontalAlignment="Left" Height="36" Margin="297,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320"/>
+        <TextBox x:Name="AddressTextBox" HorizontalAlignment="Left" Height="36" Margin="297,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320"/>
+        <PasswordBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Height="36" Margin="297,321,0,0" VerticalAlignment="Top" Width="320" PasswordChanged="OnPasswordChanged"/>
+
+        <!-- Add a Button to handle user creation -->
+        <Button Content="Create User" Width="100" Height="36" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20" Click="CreateUserButton_Click"/>
+    </Grid>
+</Window>

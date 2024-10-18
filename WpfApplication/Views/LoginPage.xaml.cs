@@ -49,7 +49,7 @@ namespace WpfApplication.Views
                 }
                 Thread.Sleep(1000);
                 var currentUser = UserSession.CurrenUser;
-                if (currentUser is not null && currentUser.Role == UserRole.ShopManager)
+                if (currentUser is not null && currentUser.Role == UserRole.Client)
                 {
                     MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
                     mainWindow.MainFrame.Navigate(new ShopManagerPage());
